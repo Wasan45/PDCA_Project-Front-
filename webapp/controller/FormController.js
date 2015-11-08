@@ -25,15 +25,16 @@ mainApp.controller('FormController', function($scope, $http, $compile) {
               method: "POST",
               url: $scope.server + '/type-form-service/services/form.php',
               data: {
-                  action : "getRef"
+                  action : "getTopic"
               }
             })
             .done(function( response ) {
                 for(i = 0; i < response["data"].length; i++){
-                    html = '<button ng-click="getForm(\''+ response["data"][i]["ref"] +'\')" class="btn btn-info button-form"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Form : ' + response["data"][i]["ref"] + '</button> ';
+                    html = '<button style="height:100px;" ng-click="getForm(\''+ response["data"][i]["topic"] +'\')" class="btn btn-info button-form"><span style="font-size: 24px;" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <span style=" font-weight: bold; font-size: 20px;"><br/>' + response["data"][i]["topic"] + '</span></button> ';
                     $("#existing-forms").append($compile(html)($scope));
                 }
             });
+
     };
      
     $scope.create_radio = function(){
