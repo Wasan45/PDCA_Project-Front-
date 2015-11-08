@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Type - Form</title>
+    <title>Type - Form - Faii</title>
 
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
