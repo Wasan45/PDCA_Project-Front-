@@ -12,9 +12,13 @@ mainApp.config(['$routeProvider',
         templateUrl: baseView + 'login.html',
         controller: 'LoginController'
     })
-    .when('/showOrders', {
+    .when('/register', {
         templateUrl: baseView + 'register.html',
         controller: 'RegisterController'
+    })
+    .when('/form', {
+        templateUrl: baseView + 'form.html',
+        controller: 'FormController'
     })
     .otherwise({
         redirectTo: '/index'

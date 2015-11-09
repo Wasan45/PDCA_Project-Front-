@@ -25,3 +25,42 @@ body {
         padding: 15px 0;
     }
 }
+
+.form-containner {
+    margin-top: 30px;
+    border-style:solid;
+    border-color: black;
+    padding:30px;
+}
+
+.form-button {
+    margin-top : 30px;
+}
+
+#existing-forms {
+    margin-bottom: 10px;
+}
+
+.button-form {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.font-head {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    display: block;
+    margin-bottom: 20px;
+}
+
+th, tr {
+   text-align: center;
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: 15px;
+}

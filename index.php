@@ -9,12 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Type - Form - Faii</title>
+    <title>Type - Form</title>
 
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="webapp/app.js"></script>
     <script src="webapp/controller/LoginController.js"></script>
+    <script src="webapp/controller/FormController.js"></script>
     
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,10 +53,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="index.php#/index">Home</a>
                     </li>
                     <li>
-                        <a href="#">Forms</a>
+                        <a href="index.php#/form">Forms</a>
                     </li>
                 </ul>
             </div>
@@ -79,7 +80,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    <div style="margin-top: 20px;"></div>
 </body>
 
 </html>
