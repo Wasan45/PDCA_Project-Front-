@@ -17,10 +17,8 @@
     <script src="webapp/controller/LoginController.js"></script>
     <script src="webapp/controller/FormController.js"></script>
     
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/logo-nav.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,15 +27,25 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body ng-app="mainApp">
 
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                
+                <li style="margin-top:50px;" class="men m-a" ><a tabindex="-1" href="index.php#/form"> My Servey</a></li>
+                <li class="men m-a" ><a tabindex="-1" href="index.php#/form"> Fill in Servey</a></li>
+         
+                                      
+            </ul>
+</div>
+    <div id="page-content-wrapper">
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!--    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+             Brand and toggle get grouped for better mobile display 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -49,7 +57,7 @@
                     <img src="http://placehold.it/150x50&text=Logo" alt="">
                 </a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+             Collect the nav links, forms, and other content for toggling 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
@@ -60,10 +68,10 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+             /.navbar-collapse 
         </div>
-        <!-- /.container -->
-    </nav>
+         /.container 
+    </nav>-->
 
     <!-- Page Content -->
     <div class="container">
@@ -80,7 +88,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <div style="margin-top: 20px;"></div>
+    </div>
+</div>
 </body>
 
 </html>

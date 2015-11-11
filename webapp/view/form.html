@@ -1,21 +1,14 @@
-<button ng-click="newForm()" class="btn btn-primary">
+<button onclick="$('#modal-create').modal('show');" class="btn btn-primary">
     <span style="font-size: 24px;" class="glyphicon glyphicon-plus" aria-hidden="true"></span> <br/>
     <span style=" font-weight: bold; font-size: 20px;">สร้าง Form ใหม่</span>
 </button>
 <br/><br/>
 <div id="existing-forms">
-    
+    <!--<button style="height:100px; width:250px;" ng-click="getQuestion(1)" class="btn btn-info button-form"><span style="font-size: 24px;" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <span style=" font-weight: bold; font-size: 20px;"><br/>dddd</span></button>--> 
 </div>
 
 <div ng-show="show == true">
-<!--    <div class="form-containner">
-       <div class="font-head">Select Form </div>
-       <div>
-        <button class="btn btn-info" ng-click="create_radio()"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Multiple Choice</button>
-        <button class="btn btn-info" ng-click="create_text()"><span class="glyphicon glyphicon-text-width" aria-hidden="true"></span> Text Field</button>
-        <button class="btn btn-info" ng-click="create_select()"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Dropdown List</button>
-       </div>
-    </div>-->
+
     <div class="form-containner">
     <div class="row">
         <div class="col-md-2">
@@ -25,45 +18,55 @@
             <textarea class="form-control" id="topic"></textarea>
         </div>
     </div><br/>
+    <div style="margin-top:10px; margin-bottom: 10px;">
+    <button id="add" ng-click="add()" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Topic Area</button>
+    <br/><br/><br/>
+    </div>
         <div id="form-list">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="table-form">
-                    <tr>
-                        <th width="60%" rowspan="2">
-                            <textarea class="form-control" id="header" placeholder="ชื่อชุดแบบสอบถาม"></textarea>
-                        </th>
-                        <th width="8">มากที่สุด</th>
-                        <th width="8">มาก</th>
-                        <th width="8">ปานกลาง</th>
-                        <th width="8">น้อย</th>
-                        <th width="8">น้อยที่สุด</th>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <th>4</th>
-                        <th>3</th>
-                        <th>2</th>
-                        <th>1</th>
-                    </tr>
-                    <tr class="t-1">
-                        <td>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <textarea class="form-control" id="question-1" placeholder="คำถามข้อที่ 1"></textarea>
-                                </div>
-                                <div class="col-md-1">
-                                    <button id="add" ng-click="addChild(1)" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> เพิ่มข้อย่อย</button>
-                                </div>
-                            </div>
-                        </td>
-                        <td><input type="radio" name="q-1"></td>
-                        <td><input type="radio" name="q-1"></td>
-                        <td><input type="radio" name="q-1"></td>
-                        <td><input type="radio" name="q-1"></td>
-                        <td><input type="radio" name="q-1"></td>
-                    </tr>
-                </table>
-                <button id="add" ng-click="add()" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> เพิ่มคำถาม</button>
+            <div class="row">
+                <div class="col-md-2">
+                    Topic Area : 
+                </div>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="question-1" placeholder="Topic No 1"></textarea>
+                </div>
+            </div><br/>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="table-form">
+                            <tr>
+                                <th width="60%" rowspan="2">
+                                    <!--<textarea class="form-control" id="header" placeholder="ชื่อชุดแบบสอบถาม"></textarea>-->
+                                </th>
+                                <th width="8">มากที่สุด</th>
+                                <th width="8">มาก</th>
+                                <th width="8">ปานกลาง</th>
+                                <th width="8">น้อย</th>
+                                <th width="8">น้อยที่สุด</th>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <th>4</th>
+                                <th>3</th>
+                                <th>2</th>
+                                <th>1</th>
+                            </tr>
+                            <tr class="t-1" style="display:none;">
+                                <td><textarea class="form-control"  placeholder="Topic No 1"></textarea></td>
+                                <td><input type="radio" name="q-1"></td>
+                                <td><input type="radio" name="q-1"></td>
+                                <td><input type="radio" name="q-1"></td>
+                                <td><input type="radio" name="q-1"></td>
+                                <td><input type="radio" name="q-1"></td>
+                            </tr>
+                        </table><br/>
+                        
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button id="add" ng-click="addChild(1)" class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                </div>
             </div>
         </div>
     </div>
@@ -73,38 +76,56 @@
     </div>
 </div>
 
+<div ng-show="show_list == true">
 <div>
 
     <div class="form-containner">
     <div class="row">
         <div class="col-md-2">
-            <span class="highlight">หัวข้อแบบสอบถาม : </span>
+            <span class="highlight">Survey Title : </span>
         </div>
         <div class="col-md-10" id="topic_form">
             
         </div>
     </div><br/>
-        <div id="form-list">
+        <div id="table-form-show">
+            
+        </div>
+    </div>
+
+
+</div>
+    
+<div id="form-list-select"></div>
+    <div class="form-button">
+    <input type="button" ng-click="poll()" class="btn btn-success" value="Submit"/>
+    </div>
+</div>
+
+<div ng-show="reportlist == true">
+<div>
+
+    <div class="form-containner">
+    <div class="row">
+        <div class="col-md-10">
+            <span class="highlight" id="report_topic"></span>
+        </div>
+    </div><br/>
+        <div>
             <div class="table-responsive">
-                <table class="table table-bordered" id="table-form">
-                    <tr>
-                        <th width="60%" rowspan="2">
-                            <textarea class="form-control" id="header" placeholder="ชื่อชุดแบบสอบถาม"></textarea>
-                        </th>
-                        <th width="8">มากที่สุด</th>
-                        <th width="8">มาก</th>
-                        <th width="8">ปานกลาง</th>
-                        <th width="8">น้อย</th>
-                        <th width="8">น้อยที่สุด</th>
-                    </tr>
-                    <tr class="t-0">
-                        <th>5</th>
-                        <th>4</th>
-                        <th>3</th>
-                        <th>2</th>
-                        <th>1</th>
-                    </tr>
-                </table>
+                        <table class="table table-bordered" id="report-show">
+                            <tr>
+                                <th width="52%">หัวข้อ</th>
+                                <th width="8">MIN</th>
+                                <th width="8">MAX</th>
+                                <th width="8">MEAN</th>
+                                <th width="8">MODE</th>
+                                <th width="8">SD</th>
+                                <th width="8">N</th>
+                            </tr>
+                            
+                        </table>
+                <br/>
             </div>
         </div>
     </div>
@@ -112,9 +133,104 @@
 
 </div>
 
-<div ng-show="show_list == true">
-<div id="form-list-select"></div>
-    <div class="form-button">
-    <input type="button" ng-click="poll()" class="btn btn-success" value="Submit"/>
+</div>
+
+
+
+
+
+
+<!--Modal-->
+
+<div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create Survey</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-3">
+                <span class="highlight">Survey Title : </span>
+            </div>
+            <div class="col-md-9" id="topic_form">
+                <input type="text" class="form-control" id="topic-modal"/>
+            </div>
+        </div>
+          <br/>
+         <div class="row">
+            <div class="col-md-3">
+                <span class="highlight">Fill in Period : </span>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                     <div class="col-md-4">
+                        <input type="text" class="form-control" id="start_date"/>
+                     </div>
+                    <div class="col-md-1">to</div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="end_date"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="newForm()">Save</button>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-complete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Survey Message</h4>
+      </div>
+      <div class="modal-body">
+        {{msg}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="complete()" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-question" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Survey Message</h4>
+      </div>
+      <div class="modal-body">
+         <input type="hidden" id="f_id" value=""/>
+        <button style="width:200px;" ng-click="getQuestion()" class="btn btn-info button-form">
+            <span style="font-size: 24px;" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 
+            <span style=" font-weight: bold; font-size: 20px; margin-left: 10px;"> View Survey</span>
+        </button><br/><br/>
+          <button  style="width:200px;" ng-click="getReport()" class="btn btn-info button-form">
+            <span style="font-size: 24px;" class="glyphicon glyphicon-indent-left" aria-hidden="true"></span> 
+            <span style=" font-weight: bold; font-size: 20px; margin-left: 10px;"> Report Survey</span>
+        </button><br/><br/>
+          <button  style="width:200px;" ng-click="beforeDelete()" class="btn btn-info button-form">
+            <span style="font-size: 24px;" class="glyphicon glyphicon-trash" aria-hidden="true"></span> 
+            <span style=" font-weight: bold; font-size: 20px; margin-left: 10px;"> Delete Survey</span>
+        </button>
+        <div class="form-delete" style="display: none;">
+            Do you want to delete a servey?<br/>
+            <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="delete()">Yes</button>
+            <button type="button" class="btn btn-danger" onclick="$('.form-delete').hide()">No</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
